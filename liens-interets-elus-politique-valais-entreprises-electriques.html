@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liens d'intérêts entre élus politiques et entreprises électriques en Valais</title>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Raleway:400,700' rel='stylesheet' type='text/css'>
+<link href='./styles.css' rel='stylesheet' type='text/css'>
+ <link href="chardinjs.css" rel="stylesheet">
+<body>
+
+
+<!-- ------ Mobile email fallback -->
+<div id="mobile-disclaimer">
+	<p>
+	Cette visualisation des <em>liens d'intérêts entre élus valaisans et entreprises électriques</em>
+	est prévue pour un écran plus large. Le confort d'utilisation sur cet appareil est réduit.
+	</p>
+	<p>
+	Revenez-y depuis un ordinateur de bureau pour une utilisation plus agréable !
+	</p>
+	<a href="mailto:?&subject=Le Temps: visualisation des liens d'intérêts des élus valaisans avec les entreprises électriques
+&body=http://www.datastory.ch/lt-reseaux-hydro/liens-interets-elus-politique-valais-entreprises-electriques.html">Envoyez-vous le lien par email!</a> 
+</div>
+
+<!-- ------------------LAYOUT------------------- -->
+
+<h1>Liens d'intérêts entre élus valaisans et entreprises électriques</h1>
+
+<div id="help-button" class="button">
+			<img style="vertical-align: -25%;" src="./assets/help.png" alt="Aide" height="15" width="15">
+			&nbsp;Comment lire ce graphique&nbsp;?
+</div>
+
+
+<div id="graphs-container">
+
+<div id="leftcolumn">
+
+<a id="top"></a><!-- hack pour mobiles -->
+<div id="info-container" data-intro="<div class='help-container'><div style='text-align: center; font-size: 26px; padding-bottom: 10px; padding-top: 20px;'><div class='help-title'>Zone d'information</div></div><div style='padding-top: 10px; padding-bottom: 10px;'>Dans cette zone apparaissent des informations supplémentaires sur l'élu ou le parti actuellement sélectionné, ou des informations générales.</div></div>" data-position="insideMiddle">
+	<div id="return-to-overview" class="button" style="display: none;">
+			<img style="vertical-align: -25%;" src="./assets/close.png" alt="Retour vue d'ensemble" height="15" width="15">
+			&nbsp;Retour à la vue d'ensemble
+	</div>
+
+<!-- 
+
+**********************************************************************************
+
+                         INSTRUCTIONS & STORY POINTS
+
+**********************************************************************************
+
+ -->
+
+<div class="info" id="info-instructions">
+
+
+	<div class="info-box">	
+		<h2>Vue d'ensemble</h2> <!-- Garder ce titre si possible pour cohérence avec bouton "Retour vue d'ensemble" -->
+		<h3>Généralités</h3>
+		<p>
+			Ce graphique regroupe toutes les données que nous avons utilisées, etc. etc.
+			Texte introductif et généralités sur le dataset à compléter. 
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo Lorem i.
+		</p>
+		<h3>Comment naviguer dans les données?</h3> <!-- A affiner si vous êtes en verve -->
+		<p>
+			Des informations supplémentaires vous attendent si vous
+			cliquez sur un parti, sur
+			une personne dans la liste des élus ou sur un siège dans
+			la liste des entreprises.
+		</p>
+	</div>
+</div>
+
+<div class="info info-story" id="info-story-1" style="display:none"> 
+	<div class="info-box">	
+		<h2>Icogne <span class="PS">la rouge</span></h2>
+		<h3>Une histoire socialiste</h3>
+		<p>
+			A Icogne, c'est la gauche qui décide. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+		</p>
+	</div>
+</div>
+
+<div class="info info-story" id="info-story-2" style="display:none"> 
+	<div class="info-box">	
+		<h2>EnAlpin <span class="PDC">l'orange</span></h2>
+		<h3>Une histoire démocrate-chrétienne</h3>
+		<p>
+			Chez EnAlpin, c'est la droite qui gagne. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+		</p>
+
+	</div>
+</div>
+
+
+<!--  
+**********************************************************************************
+
+                         INFOS PARTIS
+
+**********************************************************************************
+-->
+
+<div class="info" id="info-parti-PDC" style="display:none;"> 
+	<div class="info-box" id="info-box-name-function-container">
+		<div class="info-box">
+			<svg width="40" height="40" class="info-icon">
+				<polygon transform="translate(6,5) scale(3)" class="parti PDC" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/>
+			</svg>
+		</div>
+		<div class="info-box-right">
+			<div class="info-name">PDC</div>
+			<div class="info-fonction-parti">
+				<span class="info-fonction">68</span>
+				<span class="info-parti parti PDC">sièges</span>
+			</div>
+		</div>
+	</div>
+	<div class="info-parti-texte">
+		Le parti démocrate-chrétien est présent dans <span class="parti PDC">34</span> entreprises avec <span class="parti PDC">51</span>
+		élus
+		<ul>
+			<li><span class="parti PDC">4</span> élus fédéraux</li>
+			<li><span class="parti PDC">5</span> élus cantonaux</li>
+			<li><span class="parti PDC">5</span> anciens élus</li>
+			<li><span class="parti PDC">37</span> élus communaux</li>
+		</ul>	
+	</div>
+</div>
+
+<div class="info" id="info-parti-PLR" style="display:none;"> 
+	<div class="info-box" id="info-box-name-function-container">
+		<div class="info-box">
+			<svg width="40" height="40" class="info-icon">
+				<polygon transform="translate(6,5) scale(3)" class="parti PLR" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/>
+			</svg>
+		</div>
+		<div class="info-box-right">
+			<div class="info-name">PLR</div>
+			<div class="info-fonction-parti">
+				<span class="info-fonction">23</span>
+				<span class="info-parti parti PLR">sièges</span>
+			</div>
+		</div>
+	</div>
+	<div class="info-parti-texte">
+		Le parti libéral-radical est présent dans <span class="parti PLR">13</span> entreprises avec <span class="parti PLR">17</span>
+		élus
+		<ul>
+			<li><span class="parti PLR">2</span> élus cantonaux</li>
+			<li><span class="parti PLR">15</span> élus communaux</li>
+		</ul>	
+	</div>
+</div>
+
+<div class="info" id="info-parti-PS" style="display:none;"> 
+	<div class="info-box" id="info-box-name-function-container">
+		<div class="info-box">
+			<svg width="40" height="40" class="info-icon">
+				<polygon transform="translate(6,5) scale(3)" class="parti PS" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/>
+			</svg>
+		</div>
+		<div class="info-box-right">
+			<div class="info-name">PS</div>
+			<div class="info-fonction-parti">
+				<span class="info-fonction">8</span>
+				<span class="info-parti parti PS">sièges</span>
+			</div>
+		</div>
+	</div>
+	<div class="info-parti-texte">
+		Le parti socialiste est présent dans <span class="parti PS">3</span> entreprises avec
+		<ul>
+			<li><span class="parti PS">7</span> élus communaux</li>
+		</ul>	
+	</div>
+</div>
+
+<div class="info" id="info-parti-UDC" style="display:none;"> 
+	<div class="info-box" id="info-box-name-function-container">
+		<div class="info-box">
+			<svg width="40" height="40" class="info-icon">
+				<polygon transform="translate(6,5) scale(3)" class="parti UDC" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/>
+			</svg>
+		</div>
+		<div class="info-box-right">
+			<div class="info-name">UDC</div>
+			<div class="info-fonction-parti">
+				<span class="info-fonction">3</span>
+				<span class="info-parti parti UDC">sièges</span>
+			</div>
+		</div>
+	</div>
+	<div class="info-parti-texte">
+		L'union démocratique du centre est présente dans <span class="parti UDC">3</span> entreprises avec
+		<ul>
+			<li><span class="parti UDC">1</span> élu communal</li>
+		</ul>	
+	</div>
+</div>
+
+<div class="info" id="info-parti-autre" style="display:none;"> 
+	<div class="info-box" id="info-box-name-function-container">
+		<div class="info-box">
+			<svg width="40" height="40" class="info-icon">
+				<polygon transform="translate(6,5) scale(3)" class="parti autre" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/>
+			</svg>
+		</div>
+		<div class="info-box-right">
+			<div class="info-name">Autres partis</div>
+			<div class="info-fonction-parti">
+				<span class="info-fonction">18</span>
+				<span class="info-parti parti autre">sièges</span>
+			</div>
+		</div>
+	</div>
+	<div class="info-parti-texte">
+		Les autres partis politiques minoritaires (notamment parti indépendant, GDIP, FCD, AC, Entente, MCI, ou élus sans parti) 
+		sont présents dans <span class="parti autre">16</span> entreprises avec <span class="parti autre">16</span>
+		élus
+		<ul>
+			<li><span class="parti autre">1</span> élu cantonal</li>
+			<li><span class="parti autre">15</span> élus communaux</li>
+		</ul>	
+	</div>
+</div>
+
+
+<!--  
+**********************************************************************************
+
+                        INFOS PERSONNE ( dès ici, ne pas modifier )
+
+**********************************************************************************
+-->
+
+<div class="info" id="info-personne" style="display:none"> 
+	<div class="info-box">
+		<svg id="bigportrait" width="150" height="150"> 
+			<!-- <image xlink:href="photo.jpg" x="0" y="0" width="150" height="150" clip-path="url(#clip-path-big)"></image>  -->
+			<circle class="default" cx="75" cy="75" r="65"></circle> 
+		</svg>
+	</div>
+	<div class="info-box" id="info-box-name-function-container">
+		<div class="info-box">
+			<svg width="40" height="40" class="info-icon" id="info-icon"></svg>
+		</div>
+		<div class="info-box-right">
+			<div class="info-name" id="info-name"></div>
+			<div class="info-fonction-parti" id="info-fonction-parti">
+				<span class="info-fonction" id="info-fonction"></span>
+				<span class="info-parti parti" id="info-parti"></span>
+			</div>
+		</div>
+	</div>
+	<table id="info-entreprises">
+		<thead class="parti">
+			<tr>
+				<th>Entreprise</th>
+				<th>Depuis</th>
+				<th>Rôle</th>
+				<th>Droit</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+
+</div> <!-- div info container -->
+
+
+
+<div class="legende" data-intro="<div class='help-container-partis'><span style='text-align: center; font-size: 26px; padding-bottom: 10px; padding-top: 0px;'><span class='help-title'>Partis</span></span><span><img width='60px' src='assets/partis.png'/></span><span style='margin-left:6px'>Cliquez sur un parti pour voir ses élus.</span></div>" data-position="insideLeft">
+<span class="title">Partis politiques</span>
+<span class="parti-button parti PDC" parti="PDC">
+	<svg width="14" height="11"><polygon transform="translate(2,0)" class="parti PDC" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/></svg>
+	<span class="name">PDC</span>
+</span> 
+<span class="parti-button parti PLR" parti="PLR">
+	<svg width="14" height="11"><polygon transform="translate(2,0)" class="parti PLR" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/></svg>
+	<span class="name">PLR</span>
+</span> 
+<span class="parti-button parti PS" parti="PS">
+	<svg width="14" height="11"><polygon transform="translate(2,0)" class="parti PS" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/></svg>
+	<span class="name">PS</span>
+</span> 
+<span class="parti-button parti UDC" parti="UDC">
+	<svg width="14" height="11"><polygon transform="translate(2,0)" class="parti UDC" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/></svg>
+	<span class="name">UDC</span>
+</span>
+<span class="parti-button parti autre" parti="autre">
+	<svg width="14" height="11"><polygon transform="translate(2,0)" class="parti autre" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/></svg>
+	<span class="name">autre</span>
+</span>
+<!-- <span>non élu</span> <svg width="14" height="11"><polygon transform="translate(2,0)" class="parti nonelu" points="7.861,10.582 0,10.57 2.613,0 10.457,0 "/></svg>  -->
+</div>
+
+
+
+
+
+<div id="pyramide" data-intro="<div class='help-container'><div style='text-align: center; font-size: 26px; padding-bottom: 10px; padding-top: 10px;'><div class='help-title'>Liste des élus</div></div> <div style='padding-top: 10px; padding-bottom: 10px;'>Dans cette zone, chaque cercle représente un élu. La couleur correspond au parti politique. Les élus sont classés comme élus fédéraux, cantonaux, communaux ou anciens élus.</div><div style='padding-top: 10px;'><table><tr><td><img width='80px' src='assets/people.png'/></td><td width='20px'></td><td>Cliquez sur un élu pour voir des informations supplémentaires.</td></tr></table></div></div>" data-position="insideMiddle">
+<div class="py-level-container" id="py-level0">
+	<div class="py-info-container">
+		<div class="py-info-icon"></div>
+		<div class="py-info-level">
+			<div class="py-info-level-title">
+				Élus fédéraux
+			</div>
+			<div class="py-info-level-content" codepol="c1">
+				Conseil national
+			</div>
+			<div class="py-info-level-content" codepol="c2">
+				Conseil des États
+			</div>
+		</div>
+	</div>
+</div>
+<div class="py-level-container" id="py-level1">
+	<div class="py-info-container">
+		<div class="py-info-icon"></div>
+		<div class="py-info-level">
+			<div class="py-info-level-title">
+				Élus cantonaux
+			</div>
+			<div class="py-info-level-content" codepol="c11">
+				Conseil d'État
+			</div>
+			<div class="py-info-level-content" codepol="c12">
+				Grand Conseil
+			</div>
+		</div>
+	</div>
+</div>
+<div class="py-level-container" id="py-level2">
+	<div class="py-info-container">
+		<div class="py-info-icon"></div>
+		<div class="py-info-level">
+			<div class="py-info-level-title">
+				Anciens élus
+			</div>
+			<div class="py-info-level-content" codepol="c21">
+				Fédéraux ou cantonaux
+			</div>
+			<!-- <div class="py-info-level-content" codepol="c21">
+				Cantonaux
+			</div>  
+			<!-- <div class="py-info-level-content">
+				Conseil national 
+			</div>
+			<div class="py-info-level-content">
+				Conseil des Etats
+			</div>
+			<div class="py-info-level-content">
+				Conseil d'État
+			</div>
+			<div class="py-info-level-content">
+				Grand Conseil
+			</div>
+			 -->
+		</div>
+	</div>
+</div>
+<div class="py-level-container" id="py-level3">
+	<div class="py-info-container">
+		<div class="py-info-icon"></div>
+		<div class="py-info-level">
+			<div class="py-info-level-title">
+				Élus communaux
+			</div>
+			<div class="py-info-level-content" codepol="c31">
+				Conseil communal
+			</div>
+			<div class="py-info-level-content" codepol="c32">
+				Conseil général
+			</div>
+			<div class="py-info-level-content" codepol="c33">
+				Justice communale
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<script src="http://www.datastory.ch/vizutils.js"></script>
+
+<div id="rightcolumn" data-intro="<div class='help-container'><div style='text-align: center; font-size: 26px; padding-bottom: 10px; padding-top: 10px;'><div class='help-title'>Liste des entreprises</div></div> <div style='padding-top: 10px; padding-bottom: 10px;'>Dans cette zone se trouvent les entreprises électriques dans lesquelles siègent des élus. Les sièges occupés par des élus sont indiqués par des icônes. La forme des icônes représente le type d'élus (fédéral, cantonal, etc.). La couleur correspond au parti politique. Un élu peut siéger dans plusieurs conseils d’administration.</div><div style='padding-top: 10px;'><table><tr><td><img width='200px' src='assets/entreprise.png'/></td><td width='20px'></td><td>Cliquez sur le siège d'un élu dans une entreprise pour afficher des informations supplémentaires.</td></tr></table></div></div>" data-position="insideRight">
+	<div id="unit-chart-container-1">
+		<div class="unit-chart-title" isdistr="i0">
+			Entreprises de production
+		</div>
+	</div>
+	<div id="unit-chart-container-2">
+		<div class="unit-chart-title" isdistr="i1">
+			Entreprises de distribution
+		</div>
+	</div>
+<!-- SVG comes here -->
+</div>
+
+</div>
+
+
+<div class="credits">
+<a href="http://www.datastory.ch">datastory</a>, 2014.
+</div>
+
+<div class="disclaimer">
+Graphique réalisé sur la base du registre du commerce au 28.11.2014.
+</div>
+
+
+
+
+
+<div class="disclaimer">
+Cette visualisation ne s'affiche pas correctement ? Veuillez installer 
+un navigateur récent comme la dernière version de Google Chrome ou Mozilla Firefox.
+</div>
+
+<div class="credits">
+Réalisation: Florian Evéquoz, <a href="http://www.datastory.ch">datastory</a>, 2014.
+<br/>
+Traitement de données, programmation: Jérôme Treboux, Catherine Pugin, Florian Evéquoz, <a href="http://www.datastory.ch">datastory</a>.
+<br/>
+Graphisme: <a href="http://www.inventaire.ch">inventaire</a> &amp; <a href="http://www.datastory.ch">datastory</a>
+<br/>
+Sources: FOSC, Le Temps. 
+<br/>
+Crédits photos: Keystone, DR. 
+<br/>
+Librairies: d3.js, chardin.js, pym.js. 
+<br/>
+<a href="./data.csv">Téléchargez les données</a> 
+<br/>
+<br/>
+Quelque chose vous semble incorrect dans cette visualisation ? Faites-le-nous savoir.
+</div>
+
+<!-- Clipping-path -->
+<svg width="0" height="0">
+	<defs>
+    <clipPath id="clip-path-small">
+      <circle cx="23" cy="23" r="19" /> <!-- no less than 19 otherwise clip -->
+    </clipPath>
+    <clipPath id="clip-path-big">
+      <circle cx="75" cy="75" r="74" />
+    </clipPath>
+    </defs>
+</svg>
+
+<script src="./d3.v3.min.js"></script>
+<script src="./viz.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="chardinjs.js"></script>
+<!-- PYM specifics -->
+<script src="pym.js"></script>
+<script>
+	var pymChild = new pym.Child();	
+</script>
+<!-- end PYM specifics -->
+<script>
+/* chardin JS */
+d3.select("#help-button").on("click",function() {
+	$('body').chardinJs('start');
+});
+</script>
+<!--  
+**********************************************************************************
+
+                         SCRIPT STORY POINTS
+
+**********************************************************************************
+-->
+<script>
+
+var box  = d3.selectAll(".info.info-story .info-box, #info-instructions .info-box")
+	.append("div")
+	.attr("class","stories-nav");
+box.append("span")
+	.attr("class","stories-header")
+	.html("A découvrir") /* Titre des faits marquants / chapitres / annotations */
+box.append("span")
+	.attr("class","button story")
+	.html("EnAlpin l'orange")  /* Titre du bouton */
+	.datum(2);
+box.append("span")
+	.attr("class","button story")
+	.html("Icogne la rouge") /* Titre du bouton */
+	.datum(1);		
+
+	
+d3.selectAll("span.button.story").on("click", story)
+
+/* Affiche la story suivante */
+
+function story(n) {	
+	
+	d3.event.stopPropagation();
+	
+	d3.selectAll(".info-story").style("display","none");
+	var toDisplay;
+	d3.select("#info-instructions").style("display","none");
+	if (n==1) {
+		toDisplay = d3.select("#info-story-1").style("display",null);
+		highlightIcogne();
+	} else if(n==2) {
+		toDisplay = d3.select("#info-story-2").style("display",null);
+		highlightEnAlpin();
+	}
+	
+	//box fade in
+	toDisplay
+		.style("opacity",0)
+		.transition()
+			.duration(700)
+			.style("opacity",1)
+			.each("end", function() {
+				d3.select(this).style("opacity",null);
+			});
+	
+	//display return to overview button with delay
+	d3.select("#return-to-overview").style("display", null);
+	d3.select("#return-to-overview")
+		.style("opacity",0)
+		.transition()
+			.duration(700)
+			.delay(700)
+			.style("opacity",1)
+			.each("end", function() {
+				d3.select(this).style("opacity",null);
+			});
+}
+
+function higlightSiegesEntr(personids, parti, entr) {
+	
+	//dehighlight what's highlighted
+	d3.selectAll(".selected")
+		.classed("selected",false);
+	
+	//highlight persons
+	for(var i=0; i<personids.length; i++) {
+		d3.selectAll("#unit-chart-container-1 [personid="+personids[i]+"]")
+			.classed("selected",true);  
+		d3.selectAll("#pyramide [personid="+personids[i]+"]")
+			.classed("selected",true);
+	}
+	
+	//highlight nom entreprise
+	//highlight corresponding axes in unit-chart
+	d3.selectAll(".y.axis .tick text")
+		.each(function(dd) {
+			t=d3.select(this);	
+			if(t.datum()==entr) {
+					t.classed("selected",true);
+			}
+		});
+			
+	//highlight selected parti, lower others
+	d3.selectAll(".parti")
+		.classed("low",true);
+	d3.selectAll(".legende ."+parti)
+		.classed("low", false)
+		.classed("selected",true);
+} 
+
+function highlightIcogne() {
+	higlightSiegesEntr(["p914","p915","p1094","p1686"], "PS", "Icogne Energie");
+}
+
+function highlightEnAlpin() {
+	higlightSiegesEntr(["p1517","p234","p859","p428"], "PDC", "EnAlpin");
+}
+</script>
+
+</body>
+</html>

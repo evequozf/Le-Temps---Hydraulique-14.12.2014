@@ -1,0 +1,665 @@
+@CHARSET "UTF-8";
+
+/******** Disclaimers ***********/
+@media screen {
+  #mobile-disclaimer {
+  	display: none;
+  } 
+  
+  #info-container {
+  	min-height: 22em; /* force min size of infobox -> prevents too much move from partis & pyramid */
+  }
+
+}
+
+@media only screen and (max-device-width: 480px) {  /* initial 600px */
+	#mobile-disclaimer {
+		display: block !important;
+		font-size: 1.5em;
+		margin: 2em 0 2em 0;
+		background-color: #999;
+		color: #EEE;
+		padding: 1em;
+		text-align: center;
+	}
+	
+	#mobile-disclaimer em {
+		color: #333;
+	}
+	
+	#mobile-disclaimer.a {
+		text-align: center;
+	}	
+	
+	#info-container {
+  		min-height: 0 !important; /* no minimum height to prevent dead space */
+  	}
+}
+
+.credits,
+.disclaimer {
+	margin-top: 2em;
+	font-size: 0.8em;
+}
+
+/************ GENERAL ***************/
+
+body {
+  //background-color: #FCFCFC;
+  background-color: #fff;
+  //color: #333;
+  color: #BBB;   /* original Estève C2C2C2*/
+  //color: #C0C0C0;
+  //font-size: 62.5%;
+  font-size: 75%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;  //700
+}
+
+h1 {
+  font-family:'Droid Serif', serif;
+  font-weight: 700;
+  //width: 70%;
+  margin-top:0;
+ }
+
+/************ UNIT CHART /ENTREPRISES ***************/
+#unit-chart-container-1 svg {
+	margin-top: -10px;
+	margin-bottom: 0.8em;
+}
+
+#unit-chart-container-2 svg {
+	margin-top: -4px;
+}
+
+
+div.unit-chart-title {
+	border-top: 1px solid #C2C2C2;
+	padding: 0.8em 0 0.8em 0;
+	//margin-bottom: -1.6em;
+	font-family:'Droid Serif', serif;
+  	//font-weight: 400;
+  	font-size: 1.1em;
+}
+
+circle.grid {
+	fill: #C2C2C2;
+}
+
+#unit-chart-container-1 g.selected,
+#unit-chart-container-2 g.selected {
+	//stroke: #333;
+	stroke-width: 3px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #C2C2C2;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #BBB;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis path {
+  display: none;
+}
+
+.y.axis line {
+  display: none;
+}
+
+/*------- Interaction -------*/
+
+.axis text.high,
+.axis text.selected {
+	fill: #333;
+}
+
+.axis text.low {
+	fill: #D2D2D2;
+}
+
+.hover, 
+.selected {
+	//stroke: #fff !important;
+	stroke-width: 1.2em;
+}
+
+.siege {
+	cursor: pointer; 
+}
+
+/************ TOOLTIP ***************/
+
+div.tooltip {   
+  position: absolute;           
+  text-align: left;
+  vertical-align: middle;                           
+  padding: 5px;             
+  font-size: 1.5em;  
+  font-family:'Droid Serif', serif;
+  background: #BBB;
+  color: #fff;   
+  //border: 1px solid lightgray;      
+  pointer-events: none;   
+  box-shadow: 2px 2px 5px #AAAAAA;     
+}
+
+.tooltip a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.tooltip div {
+	//color: inherit;
+	//text-decoration: underline;
+}
+
+.tooltip div.clic {
+	color: #4D4D4D;
+	font-size: 0.75em;
+}
+
+
+/************ INFOS ***************/
+
+/* buttons */
+.button {
+	cursor: pointer; 
+	padding:0.65em; 
+	color: #333; 
+	background-color: #F3F3F3/*#FDFAD6*/; 
+	border-radius: 4px;
+	overflow: auto;
+	//box-shadow: 1px 1px 1px #CCC;
+}
+
+.button:hover {
+	background-color: white;
+	border: 1px solid #EEE; 
+}
+
+#return-to-overview {
+	position:absolute;
+	top: 0;
+	right: 0;
+}
+
+#help-button {
+	position:absolute;
+	//border: 1px solid #EEE; 
+	top: 2.5em;
+	//top: 3em;
+	right: -4px;
+	padding-right: 6em;
+    box-shadow: 1px 1px 1px #CCC;
+}
+
+#info-container {
+	position: relative;
+}
+
+/* the rest */
+ul {
+	list-style-type: none;	
+}
+
+.info {
+	color: #333;
+	margin-bottom: 1.2em;
+} 
+
+.info div {
+	//border: 1px solid black;
+}
+
+.info .info-parti-texte {
+	padding-left: 3.8em;
+}
+
+.info .info-box,
+.info .info-box-right {
+	display: inline-block;
+	vertical-align: top;	
+}
+
+#info-box-name-function-container {
+	vertical-align: bottom;
+	margin-bottom: 1.2em;
+}
+
+.info circle {
+	stroke-width: 18px; 
+	stroke-opacity: 0.8;
+}
+
+.info-name {
+    font-family:'Droid Serif', serif;
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+.info-fonction-parti {
+	font-size: 1.3em;
+}
+
+.info-icon {
+	vertical-align: top;
+	margin: 2px 17px 2px 0;
+	position: relative;
+	//left: -15px;
+	left: -5px;
+}
+
+.info-icon g {
+	//stroke: #333 !important;
+	stroke-width: 2px;
+}
+
+.info-box-right {
+	position: relative;
+	left: -15px;
+}
+
+.info-parti {
+    font-family: 'Raleway', sans-serif;
+  	font-weight: 700;
+}
+
+.info table {
+	margin-top: 1.5em;
+	margin-left: 1.4em;
+	padding: 0;
+	border-spacing: 0;
+    border-collapse: separate;
+	//table-layout: fixed;
+	width: 90%;
+}
+
+.info th, 
+.info td {
+    //border: 1px solid black;
+    overflow: hidden;
+    //width: 30%;
+}
+
+.info th {
+	font-family:'Droid Serif', serif;
+    font-weight: 400;
+    text-align: left;
+    font-size: 1.1em;
+    padding-bottom: 0.5em;
+}
+
+/*------- Interaction -------*/
+
+.info circle.default {
+	fill: none; 
+	stroke:#D2D2D2;
+}
+
+.info circle.selected {
+	fill-opacity: 0.1;
+}
+
+/********** COULEURS PARTIS ************/
+
+span.parti {
+	font-weight: 700;
+	
+}
+
+.PDC  {
+	color: #FDB462;
+	fill: #FDB462;
+	stroke: #FDB462;
+}
+
+.PDC.high,
+.PDC.selected {
+	fill: #FF7F00;
+	stroke: #FF7F00;
+}
+
+.PLR  {
+	color: #80B1D3;
+	fill: #80B1D3;
+	stroke: #80B1D3;
+}
+
+.PLR.high,
+.PLR.selected {
+	fill: #377EB8;
+	stroke: #377EB8;
+}
+
+.UDC  {
+	color: #B3DE69;
+	fill: #B3DE69;
+	stroke: #B3DE69;
+}
+
+.UDC.high,
+.UDC.selected  {
+	fill: #4DAF4A;
+	stroke: #4DAF4A;
+}
+
+.PS  {
+	color: #FB8072;
+	fill: #FB8072;
+	stroke: #FB8072;
+}
+
+.PS.high,
+.PS.selected  {
+	fill: #E41A1C;
+	stroke: #E41A1C;
+}
+
+.autre  {
+	color: #BEBADA;
+	fill: #BEBADA;
+	stroke: #BEBADA;
+}
+
+.autre.high,
+.autre.selected {
+	fill: #984EA3;
+	stroke: #984EA3;
+}
+
+.nonelu  {
+	color: #DBDBDB;
+	fill: #DBDBDB;
+	stroke: #DBDBDB;
+}
+
+.nonelu.high,
+.nonelu.selected  {
+	fill: #C2C2C2;
+	stroke: #C2C2C2;
+}
+
+.low {
+	fill: #DBDBDB;
+	stroke: #DBDBDB;
+}
+
+/*
+// var partiColors = {
+// 
+// //Brewer 8 qual set1 red
+// 	"PDC":"#FF7F00",
+// 	"PS":"#F781BF",
+// 	"PLR":"#377EB8",
+// 	"autre parti":"#4DAF4A", 
+// 	"UDC":"#A65628",
+// 	"sans parti":"#E41A1C",  //rouge
+// 	//"#N/A":"#FFFF33" //yellow, aggressive
+// 	"#N/A":"#FFF" 	
+// 
+// //Brewer 8 qual set3 //plus discret
+// 	"PDC":"#FDB462",
+// 	"PS":"#FCCDE5",
+// 	"PLR":"#80B1D3",
+// 	//"autre parti":"#BEBADA",  //violet
+// 	"UDC":"#B3DE69",
+// 	"autre parti":"#FB8072",  //rouge
+// 	//"sans parti":"#FB8072",  //rouge
+// 	//"#N/A":"#FFF"
+// 	"#N/A":"#DBDBDB" //EEE sur fond blanc D2D2D2 pour Estève
+*/
+
+/************ LEGENDE ***************/
+
+.legende {
+	border-top: 1px solid #C2C2C2;
+	border-bottom: 1px solid #C2C2C2;
+	vertical-align: middle;
+	//margin-bottom: 2em;
+	padding: 0.8em 0 0.8em 0;
+	width:100%;
+	/*font-family:'Droid Serif', serif;
+  	font-weight: 400;*/
+  	//font-size: 12px;
+}
+
+.legende svg {
+	margin-left: 1.2em;
+	vertical-align: middle;
+}
+
+.legende svg polygon.selected {
+	stroke-width: 0;
+}
+
+.legende span.parti {
+	vertical-align: middle;
+	//border: 1px solid black;
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.legende span.parti.selected {
+	font-weight: 700;
+	color: #333;
+}
+
+.legende span.parti-button:hover {
+	text-decoration: underline;
+	color: #333;
+}
+
+.legende .title {
+	vertical-align: middle;
+	font-size: 1.1em;
+	font-family:'Droid Serif', serif;
+  	font-weight: 400;
+  	margin-bottom: 0.8em;
+  	padding-left: 1.25em;
+}
+
+/************ OVERALL LAYOUT ***************/
+
+#graphs-container {
+	width: 100%;
+}
+
+#leftcolumn {
+	display:inline-block;
+	vertical-align: top;
+	margin-right: 2em; 
+	width: 510px; /* FIXME... */
+}
+
+#rightcolumn {
+	display:inline-block;
+	vertical-align: top;
+}
+
+
+/************ PYRAMIDE ***************/
+
+#pyramide {
+	//margin-top: 2em;
+	//border-top: 1px solid #C2C2C2;
+	margin-bottom: 1.5em;
+	//width: 550px;
+	//width:480px;
+	width: 510px;
+}
+
+div.py-level-container {
+	//border-top: 1px solid #C2C2C2;
+	width:100%;
+	padding: 0.8em 0 0.8em 0;
+  	white-space:nowrap;
+  	fill: #DBDBDB;
+  	vertical-align: middle;
+}
+
+.py-info-icon {
+	display: inline-block;
+	vertical-align: top;
+	//fill: #DBDBDB;
+}
+
+.py-info-level {
+	display: inline-block;
+	margin-left: 0.3em;
+	text-align:left;
+}
+
+/*
+.py-info-container {
+	//width:110px;
+	//display: inline-block;
+	display: table-cell;
+	//text-align:left;
+}
+*/
+
+.py-info-container {
+	width:110px; /* if total = 480 or align circles right*/
+	//width: 150px; /* if align circles left */
+	display: inline-block;
+	//text-align:left;
+}
+
+div.py-info-level-title {
+	font-family:'Droid Serif', serif;
+  	//font-weight: 400;
+  	font-size: 1.1em;
+}
+
+div.py-info-level-content {
+	padding: 3px 0 0 0;
+	font-family: 'Raleway', sans-serif;
+  	//font-weight: 400;
+}
+
+/* //fails on safari...
+div.py-personnes-container {
+	//width:377px;
+	width:100%;
+	//display: inline-block;
+	display: table-cell;
+	vertical-align: top;
+	text-align: right;
+}
+*/
+
+div.py-personnes-container {
+	//width:377px; /* if total = 480 */
+	width: 397px; /* if align circles right - remove if align circles left*/
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+}
+
+/* class names that begin with py-personnes-layer-  WARNING ! bugs Safari ?*/
+/*div[class^="py-personnes-layer-"], div[class*=" py-personnes-layer-"] {
+	//border: 1px solid black;
+}
+*/
+
+.py-personne {
+	display:inline-block;
+	cursor:pointer;
+}
+
+.py-personne circle {
+	//fill: none; 
+	stroke-width: 5px; 
+	stroke-opacity: 0.9; 
+	//stroke:#D2D2D2;
+	fill-opacity: 0.2; //was 0.6
+}
+
+.py-personne circle.hover {
+	stroke-opacity: 1;
+}
+
+.py-personne circle.small {
+	//fill: #D2D2D2;
+	stroke-width: 2px; 
+	//fill-opacity: 1;
+}
+
+.py-personne circle.small.hover {
+	stroke-opacity: 1;
+}
+
+.py-personne image {
+	
+}
+
+
+/************ INTERACTION *****************/
+
+.selected,
+.high {
+	fill: #333;
+	color: #333;
+}
+
+.selected {
+	//color: inherit;
+	//fill: inherit;
+	font-weight: 700;
+}
+
+
+
+/************ STORIES *****************/
+.button.story {
+	margin-right: 1em;
+}
+
+h2 {
+	font-family: 'Droid Serif', serif;
+	font-weight: 400;
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+.stories-nav {
+	padding: 0.2em 0 0.2em 0;
+}
+.stories-header {
+	font-family: 'Droid Serif', serif;
+	font-weight: 400;
+	font-size: 1.2em;
+	margin-right: 1em;
+}
+
+/********* HELP **************/
+
+.help-container-partis span {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.help-container {
+	padding: 1em;
+}
+
+.help-title {
+	font-family: 'Droid Serif', serif;
+	font-weight: 700;
+	font-size: 1.2em;
+}

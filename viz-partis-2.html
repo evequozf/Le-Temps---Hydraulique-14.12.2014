@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Politique et réseaux hydro-électriques en Valais - datastory</title>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Raleway:400,700' rel='stylesheet' type='text/css'>
+<link href='./styles.css' rel='stylesheet' type='text/css'>
+
+<style>
+		
+		body {
+			background-color: #fafafa;
+		}
+		
+		.story-container {
+			color: #333;
+		}
+		
+		.story-container {
+			width: 85%;
+			margin: 0 7.5% 0 7.5%;
+		}
+		
+		.svg-container,
+		.annotation-container {
+			display: inline-block;
+			vertical-align: middle;	
+			//border: 1px solid black;
+		}
+		
+		.svg-container {
+			width: 1.15em;
+		}
+		
+		.sieges-shapes {
+			padding: 1px;
+		}
+		
+		.percent {
+			font-weight: 700;
+			color: #333;
+		}
+		
+		.graph {
+			width: 80%;
+			margin-left:10%;
+			margin-right:10%;
+			padding: 1.5em;
+			margin-top: 3em;
+			margin-bottom: 3em;
+			background-color: #fff;
+		}
+		
+		#embed-datastory-graph {
+			width: 98%;
+			margin-left:1%;
+			margin-right: 1%;
+			margin-top: 3em;
+			margin-bottom: 3em;
+			padding-top: 3em;
+			padding-bottom: 3em;
+			//border-top: 1px solid #ccc;
+			//border-bottom: 1px solid #ccc;
+		}
+		
+		.caption-title {
+			color: #333;
+			text-align: left;
+			padding-bottom: 1.5em;
+			font-size: 1.2em;
+			font-family:'Droid Serif', serif;
+  			font-weight: 700;
+  			//font-variant: small-caps;
+		}
+		
+		.caption-key {
+			text-align: left;
+			margin-top: 1.5em;
+			//margin-bottom: 1.5em;
+			font-size: 1em;
+			//font-family:'Droid Serif', serif;
+  			//font-weight: 700;
+  			//font-variant: small-caps;
+  			color: #c2c2c2;
+		}
+		
+		table thead tr {
+			color: #333;
+			//font-weight: 700;
+  			//font-variant: small-caps;
+  			text-align: left;
+  			border-bottom: 1px solid #333;
+		}
+		
+		table td {
+			//vertical-align: middle;
+			padding-bottom: 0.5em;
+		}
+		
+		table td.label {
+			text-align: left;
+			color: #333;
+		}
+		
+		table tbody {
+			color: #c2c2c2;
+		}
+		
+		
+		.unit-chart-container {
+			
+			width: 300px;
+		}
+		
+		.unit-chart-container .row {
+			//display: table-row;
+			width: 300px;
+		}
+		
+		.unit-chart-container .column {
+			display: block;
+		}
+		
+		.unit-chart {
+			-ms-writing-mode: tb-lr;
+			-webkit-writing-mode: vertical-lr;
+			-moz-writing-mode: vertical-lr;
+			-ms-writing-mode: vertical-lr;
+			writing-mode: vertical-lr;
+		}
+		
+		#unitchart {
+			//width: 300px;
+			height: 57px;
+		}
+		
+		#shapeunitchart {
+			height: 68px;
+		}
+		
+		/*iframe {
+			border: 0; 
+			//position:fixed; 
+			//top:0; 
+			//left:0; 
+			//right:0; 
+			//bottom:0; 
+			//width:100%; 
+			//height:100%
+		}*/
+		
+	</style>
+</head>
+<body>
+
+
+
+	<div class="graph">
+	<h1>Proportion d'élus siégeant dans des conseils d'administration</h1>
+
+	
+	<!-- 
+	<div id="unitchart-container" class="unit-chart-container">
+		<div class="row">
+			<div width="165px" class="PDC column" style="border:1px solid black;">PDC</div>
+			<div width="54px" class="PLR column" style="border:1px solid black;">PLR</div>
+			<div width="24px" class="PS column" style="border:1px solid black;">PS</div>
+			<div width="3px" class="UDC column" style="border:1px solid black;">UDC</div>
+			<div width="51px" class="autre column" style="border:1px solid black;">autre</div>
+		</div>
+		
+	</div>
+	 -->
+	
+	
+	
+	<table id="partis-elus">
+
+	<!--   <thead>
+	<tr>
+		<th>Parti</th>
+		<th>Élus</th>
+		<th></th>
+	</tr>
+	</thead>
+	-->
+	<tbody>
+	</tbody>
+	</table>
+	<div class="caption-key">
+		<span class="svg-container py-personne" style="display: inline-block; cursor: default;">
+			<svg height="14" width="14"><circle class="parti nonelu small" cx="7" cy="7" r="4"></circle></svg>
+		</span>= 1 élu
+	</div>
+	
+	<!-- 
+	<div id="shapeunitchart" class="unit-chart">
+	</div>
+	 -->
+	
+	
+	</div>
+	
+	
+	<!-- ------------------------------- -->
+	<script type="text/javascript" src="./d3.v3.min.js"></script>
+	<script type="text/javascript" src="pym.js"></script>
+	<script type="text/javascript">
+	
+	/* container must be a d3 selection */
+	function appendPersons(container, amount, percent, parti, texte) {
+		
+		if(typeof texte == 'undefined') texte = "élus";
+		
+		container.append("td")
+			.attr("class","label")
+			.html(parti);
+		
+		/*container.append("td")
+			.html(amount+" "+texte);
+		*/
+		var c = container.append("td")
+		
+		for(var i=0; i<amount; i++) {
+			c.append("div")
+				.attr("class", "svg-container py-personne")
+				.style("cursor","default")
+				.append("svg")
+					.attr("viewBox", "0 0 14 14")
+					.attr("width","14")
+					.attr("height","14")
+					.append("circle")
+						.attr("class","parti small "+parti)
+						.attr("cx",7)
+						.attr("cy",7)
+						.attr("r",4);
+		}
+		
+		c.append("div")
+			.attr("class", "annotation-container percent")
+			.style("margin-left", "0.5em")
+			.html(percent+"&#37;");
+		
+		c.append("div")
+			.attr("class", "annotation-container")
+			.style("margin-left", "0.5em")
+			.html("-&nbsp;"+amount+"&nbsp;"+texte);
+		
+	}
+	
+	
+function appendPersonsBlock(container, amount, parti) {
+		for(var j=0; j<amount.length; j++) {
+			for(var i=0; i<amount[j]; i++) {
+				container.append("div")
+					.attr("class", "svg-container py-personne")
+					.style("cursor","default")
+					.append("svg")
+						.attr("viewBox", "0 0 14 14")
+						.attr("width","14")
+						.attr("height","14")
+						.append("circle")
+							.attr("class","parti small "+parti[j])
+							.attr("cx",7)
+							.attr("cy",7)
+							.attr("r",4);
+			}
+		}
+	}
+	
+	
+function appendSiegesBlock(container, amount, parti) {
+	for(var j=0; j<amount.length; j++) {
+		for(var i=0; i<amount[j]; i++) {
+			container.append("div")
+				.attr("class", "svg-container py-personne")
+				.style("cursor","default")
+				.append("svg")
+					.attr("viewBox", "0 0 14 14")
+					.attr("width","14")
+					.attr("height","14")
+					.append("circle")
+						.attr("class","parti small "+parti[j])
+						.attr("cx",7)
+						.attr("cy",7)
+						.attr("r",4);
+		}
+	}
+}
+	
+	
+	var tab = d3.select("#partis-elus tbody")
+	appendPersons(tab.append("tr"), 51, 55, "PDC");
+	appendPersons(tab.append("tr"), 17, 18, "PLR");
+	appendPersons(tab.append("tr"), 7, 8, "PS");
+	appendPersons(tab.append("tr"), 1, 1, "UDC", "élu");
+	appendPersons(tab.append("tr"), 16, 17, "autre");
+	
+	
+	var d = d3.select("#unitchart");
+	appendPersonsBlock(d,[51,17,7,1,16],["PDC","PLR","PS","UDC","autre"])	
+	
+	
+	
+	/*********************/
+	var polyPointsFed = "43,15 28,15 28,0 15,0 15,15 0,15 0,28 15,28 15,43 28,43 28,28 43,28 ",
+	  polyPointsCant = "22.184,0.342 29.069,14.328 44.466,16.572 33.325,27.459 35.955,42.833 22.184,35.573 8.413,42.833 11.042,27.459 -0.099,16.572 15.298,14.328";
+	  polyPointsOld = "23.088,2.834 42.25,39.999 3.923,39.999 ",
+	  polyPointsNot = "22,0 44,22 22,44 0,22";
+	var pathComm = "M3.356,1.396H3.213v15.839c0,17.488,18.287,24.368,18.287,24.368s18.287-6.88,18.287-24.368c0-13.363,0-15.55,0-15.839h-0.144H3.356z";
+
+	function appendSiegesBlock(container, amount, parti, shape, attribute, points) {
+		for(var i=0; i<amount; i++) {
+			container.append("div")
+				.attr("class", "svg-container sieges-shapes")
+				.style("cursor","default")
+				.append("svg")
+					//.style("border", "1px solid black")
+					.attr("viewBox", "0 0 14 14")
+					.attr("width","14")
+					.attr("height","14")
+					.append("g")
+						.attr("class","parti small "+parti)
+						.attr("transform", "scale("+scalefactor+")")
+						.append(shape)
+							.attr(attribute,points);
+		}
+	}
+	
+	function appendSiegesParti(container, parti, amountFed, amountCant, amountAnc, amountCom) {
+		appendSiegesBlock(container,amountFed,parti,"polygon","points",polyPointsFed);
+		appendSiegesBlock(container,amountCant,parti,"polygon","points",polyPointsCant);
+		appendSiegesBlock(container,amountAnc,parti,"polygon","points",polyPointsOld);
+		appendSiegesBlock(container,amountCom,parti,"path","d",pathComm);
+	}
+	
+	var scalefactor = 11/44; 
+	appendSiegesParti(d3.select("#shapeunitchart"),"PDC",4,6,12,46);
+	appendSiegesParti(d3.select("#shapeunitchart"),"PLR",0,2,0,21);
+	appendSiegesParti(d3.select("#shapeunitchart"),"PS",0,0,0,8);
+	appendSiegesParti(d3.select("#shapeunitchart"),"UDC",0,0,0,3);
+	appendSiegesParti(d3.select("#shapeunitchart"),"autre",0,1,0,17);
+	
+	</script>
+	
+	<script>
+		var pymParent = new pym.Parent(
+				'embed-datastory-graph', 
+				'./liens-interets-elus-politique-valais-entreprises-electriques.html', 
+				{});
+	</script>
+</body>
+</html>
