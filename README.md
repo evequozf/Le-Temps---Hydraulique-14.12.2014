@@ -10,5 +10,5 @@ Crédits photos: Keystone, DR.
 Librairies: d3.js, chardin.js, pym.js. 
 
 ## Main visualization files
-viz.js (visulization code)
+viz.js (visualization code)
 data.csv
